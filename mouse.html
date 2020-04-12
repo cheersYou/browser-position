@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title> </title>
+    <style>
+      html,
+      body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 30%;
+        height: 30%;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <div class="container"></div>
+    </div>
+    <script>
+      let container = document.querySelector(".container");
+      let test = document.querySelector(".test");
+      init(container, "子级", false, true);
+      init(test, "父级", false, true);
+      function init(container, test, stop = true, prevent = true) {
+        container.addEventListener("mousedown", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mousedown", test);
+        });
+        container.addEventListener("mouseup", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mouseup", test);
+        });
+        container.addEventListener("mouseenter", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mouseenter", test);
+        });
+        container.addEventListener("mouseout", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mouseout", test);
+        });
+        container.addEventListener("mousemove", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mousemove", test);
+        });
+        container.addEventListener("mouseover", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mouseover", test);
+        });
+        container.addEventListener("mouseleave", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("mouseleave", test);
+        });
+        container.addEventListener("click", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("click", test);
+        });
+        container.addEventListener("dblclick", function (e) {
+          if (stop) {
+            e.stopPropagation();
+          }
+          if (prevent) {
+            e.preventDefault();
+          }
+          console.log("dblclick", test);
+        });
+      }
+    </script>
+  </body>
+</html>
